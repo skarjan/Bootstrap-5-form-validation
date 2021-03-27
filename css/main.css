@@ -270,10 +270,10 @@ body {
 
 .form-style {
   padding: 15px 10px 0px 10px;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background-color: #EBEBEB;
+  /* background: rgba(255, 255, 255, 0.25); */
+  box-shadow: 0 2px 6px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin-bottom: 5rem;
@@ -284,7 +284,7 @@ body {
   color: white;
   padding: 30px 15px 30px 15px;
   /* background: rgba( 39, 64, 96, 1.00 ); */
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 2px 6px 0 rgba(31, 38, 135, 0.37);
   /* backdrop-filter: blur( 0.0px );
   -webkit-backdrop-filter: blur( 0.0px ); */
   border-radius: 5px;
@@ -294,14 +294,21 @@ body {
 }
 
 .form-style button:hover {
-  background-color: #629460;
-  border-color: #629460;
+  background-color: #16262E;
+  border-color: #16262E;
 }
 
 .form-style button {
-  border-color: #629460;
-  color: #629460;
+  border-color: #2E4756;
+  background-color: #2E4756;
+  color: white;
 }
+.form-style button:disabled {
+  border-color: #2E4756;
+  background-color: #2E4756;
+  color: white;
+}
+
 
 @media only screen and (max-width: 600px) { 
   .header-style {

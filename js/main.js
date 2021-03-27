@@ -29,7 +29,7 @@ const _FIRST_NAME_PATTERN = /^[a-z ,.'-]+$/i;
 const _LAST_NAME_PATTERN = /^[a-z ,.'-]+$/i;
 const _DOB_PATTERN = /^[\d]{2}-[\d]{2}-[\d]{4}/i;
 const _MOBILE_NUMBER_PATTERN = /^[0]6\d{8}$|^[\+]316\d{8}$/i;
-const _LAND_LINE_PATTERN = /^0[1-6]\d{1,2}\d{7}|^\+31[1-6]\d{1,2}\d{7}/i;
+const _LAND_LINE_PATTERN = /^(\+|\d)[0-9]{7,16}$/i;
 const _EMAIL_PATTERN = /(?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i;
 
 //=================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -113,6 +113,7 @@ function addEventListenerToButton(button) {
     }
     if (this.id === "showRegexButton") {
       showRegexPatterns()
+      window.location.href = "#regexMsg";
     }
   })
 }
@@ -142,7 +143,7 @@ function autoFillFunction() {
   $(".validate")[2].dispatchEvent(event);
   $(".validate")[3].value = "0612345678"
   $(".validate")[3].dispatchEvent(event);
-  $(".validate")[4].value = "0104323354"
+  $(".validate")[4].value = "0123456789"
   $(".validate")[4].dispatchEvent(event);
   $(".validate")[5].value = "john@doeplanet.eu"
   $(".validate")[5].dispatchEvent(event);
@@ -152,7 +153,6 @@ function autoFillFunction() {
 
 function showRegexPatterns() {
   if (($("#regexMsg").hasClass("collapse"))) {
-
 
     $("#regexMsg").removeClass("collapse");
   } else {

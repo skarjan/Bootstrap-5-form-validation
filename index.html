@@ -116,7 +116,7 @@
           <div class="row">
 
             <div class="col-6">
-              <button type="button" id="submitButton" class="mb-3 btn btn-outline-success" disabled>Submit</button>
+              <button type="button" id="submitButton" class="mb-3 btn btn-success" disabled>Submit</button>
               <button type="button" id="autoFillButton" class="mb-3 btn btn-outline-success">Auto-Fill</button>
               <button type="button" id="showRegexButton" class="mb-3 btn btn-outline-success">RegEx</button>
             </div>
@@ -132,7 +132,7 @@
                   <p class="font-monospace">First name: /^[a-z ,.'-]+$/i</p>
                   <p class="font-monospace">Last name: /^[a-z ,.'-]+$/i</p>
                   <p class="font-monospace">Date of birth: /^[\d]{2}-[\d]{2}-[\d]{4}/i</p>
-                  <p class="font-monospace">Mobile number: /^[0]6\d{8}$|^[\+]316\d{8}$/i</p>
+                  <p class="font-monospace">Mobile number: /^(\+|\d)[0-9]{7,16}$/i</p>
                   <p class="font-monospace">Land line = /^0[1-6]\d{1,2}\d{7}|^\+31[1-6]\d{1,2}\d{7}/i</p>
                   <p class="font-monospace">IBAN = <a href="https://math.stackexchange.com/questions/1918217/the-mod97-operation-in-iban-validation">See</a> explanation</p>
                 </div>
