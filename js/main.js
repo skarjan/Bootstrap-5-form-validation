@@ -9,7 +9,7 @@
 //==========================================================================================================================================================================================================================================================================================================================================
 
 function trace(msg) {
-  traceOn = false;
+  traceOn = true;
   if (traceOn) {
     return console.log(msg);
   }
@@ -27,10 +27,10 @@ function trace(msg) {
 
 const _FIRST_NAME_PATTERN = /^[a-z ,.'-]+$/i;
 const _LAST_NAME_PATTERN = /^[a-z ,.'-]+$/i;
+const _DOB_PATTERN = /^[\d]{2}-[\d]{2}-[\d]{4}/i;
 const _MOBILE_NUMBER_PATTERN = /^[0]6\d{8}$|^[\+]316\d{8}$/i;
 const _LAND_LINE_PATTERN = /^0[1-6]\d{1,2}\d{7}|^\+31[1-6]\d{1,2}\d{7}/i;
 const _EMAIL_PATTERN = /(?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i;
-const _DOB_PATTERN = /^[\d]{2}-[\d]{2}-[\d]{4}/i;
 
 //=================================================================================================================================================================================================================================================================================================================================================================================================================
 //                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -108,7 +108,12 @@ function addEventListenerToInput(input) {
 
 function addEventListenerToButton(button) {
   document.getElementById(button).addEventListener('click', function () {
-    autoFillFunction();
+    if (this.id === "autoFillButton") {
+      autoFillFunction();
+    }
+    if (this.id === "showRegexButton") {
+      showRegexPatterns()
+    }
   })
 }
 
@@ -129,20 +134,31 @@ function autoFillFunction() {
   // Create a new 'change' event
   var event = new Event('input');
 
-  $(":input")[0].value = "John"
-  $(":input")[0].dispatchEvent(event);
-  $(":input")[1].value = "Doe"
-  $(":input")[1].dispatchEvent(event);
-  $(":input")[2].value = "01-01-1990"
-  $(":input")[2].dispatchEvent(event);
-  $(":input")[3].value = "0612345678"
-  $(":input")[3].dispatchEvent(event);
-  $(":input")[4].value = "0104323354"
-  $(":input")[4].dispatchEvent(event);
-  $(":input")[5].value = "john@doeplanet.eu"
-  $(":input")[5].dispatchEvent(event);
-  $(":input")[6].value = "NL86INGB0002445588"
-  $(":input")[6].dispatchEvent(event);
+  $(".validate")[0].value = "John"
+  $(".validate")[0].dispatchEvent(event);
+  $(".validate")[1].value = "Doe"
+  $(".validate")[1].dispatchEvent(event);
+  $(".validate")[2].value = "01-01-1990"
+  $(".validate")[2].dispatchEvent(event);
+  $(".validate")[3].value = "0612345678"
+  $(".validate")[3].dispatchEvent(event);
+  $(".validate")[4].value = "0104323354"
+  $(".validate")[4].dispatchEvent(event);
+  $(".validate")[5].value = "john@doeplanet.eu"
+  $(".validate")[5].dispatchEvent(event);
+  $(".validate")[6].value = "NL86INGB0002445588"
+  $(".validate")[6].dispatchEvent(event);
+}
+
+function showRegexPatterns() {
+  if (($("#regexMsg").hasClass("collapse"))) {
+
+
+    $("#regexMsg").removeClass("collapse");
+  } else {
+    $("#regexMsg").addClass("collapse");
+  }
+  
 }
 
 //=====================================================================================================================================================================================================================================================================================================================================================================================

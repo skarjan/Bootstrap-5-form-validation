@@ -180,9 +180,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -193,6 +193,7 @@ textarea {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -209,11 +210,11 @@ textarea {
   }
 
   a[href]::after {
-    content: " (" attr(href) ")";
+    content: " ("attr(href) ")";
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: " ("attr(title) ")";
   }
 
   /*
@@ -264,39 +265,56 @@ textarea {
 /* Custom CSS BS Forms & More */
 
 body {
-  background-color: #D3E2EE;
+  background-color: #F5F5F5;
 }
-.form-style{
+
+.form-style {
   padding: 15px 10px 0px 10px;
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
   margin-bottom: 5rem;
 }
 
 .header-style {
-  background-image: url("../img/notepad.jpg");
-  color:white;
+  background-image: url("../img/neon.jpg");
+  color: white;
   padding: 30px 15px 30px 15px;
-  background: rgba( 39, 64, 96, 1.00 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 0.0px );
-  -webkit-backdrop-filter: blur( 0.0px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  /* background: rgba( 39, 64, 96, 1.00 ); */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* backdrop-filter: blur( 0.0px );
+  -webkit-backdrop-filter: blur( 0.0px ); */
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.form-style button:hover{
- background-color: #629460;
- border-color:#629460;
+.form-style button:hover {
+  background-color: #629460;
+  border-color: #629460;
 }
 
-.form-style button{
- border-color:#629460;
- color:#629460;
+.form-style button {
+  border-color: #629460;
+  color: #629460;
 }
+
+@media only screen and (max-width: 600px) { 
+  .header-style {
+    background-image: url("../img/neon.jpg");
+    color: white;
+    padding: 30px 15px 30px 15px;
+    /* background: rgba( 39, 64, 96, 1.00 ); */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* backdrop-filter: blur( 0.0px );
+    -webkit-backdrop-filter: blur( 0.0px ); */
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+ }

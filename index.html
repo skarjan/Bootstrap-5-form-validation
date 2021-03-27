@@ -48,13 +48,18 @@
 
         <form class="form-style">
           <div class="row">
+            <div class="col-12">
+              
+            </div>
+          </div>
+
+
+          <div class="row">
 
             <div class="col-6">
               <input id="firstName" class="validate mb-3 form-control" type="text" aria-label="first-name"
                 placeholder="first name">
             </div>
-
-
 
             <div class="col-6">
               <input id="lastName" class="validate mb-3 form-control" type="text" placeholder="last name">
@@ -65,9 +70,9 @@
           <div class="row">
 
             <div class="col-6">
-              <input id="dateOfBirth" class="validate mb-3 form-control" type="text" placeholder="dd-mm-yyyy (date of birth)">
+              <input id="dateOfBirth" class="validate mb-3 form-control" type="text"
+                placeholder="dd-mm-yyyy (date of birth)">
             </div>
-
 
             <div class="col-6">
               <input id="mobileNumber" class="validate mb-3 form-control" type="text" placeholder="mobile phone">
@@ -75,13 +80,11 @@
 
           </div> <!-- end of row -->
 
-
           <div class="row">
 
             <div class="col-6">
               <input id="landLine" class="validate mb-3 form-control" type="text" placeholder="land line">
             </div>
-
 
             <div class="col-6">
               <input id="email" class="validate mb-3 form-control" type="text" placeholder="e-mail">
@@ -110,28 +113,40 @@
             </div>
           </div>
 
-
           <div class="row">
 
-            <div class="col-3">
+            <div class="col-6">
               <button type="button" id="submitButton" class="mb-3 btn btn-outline-success" disabled>Submit</button>
-            </div>
-            <div class="col-5">
               <button type="button" id="autoFillButton" class="mb-3 btn btn-outline-success">Auto-Fill</button>
+              <button type="button" id="showRegexButton" class="mb-3 btn btn-outline-success">RegEx</button>
             </div>
-
 
           </div> <!-- end of row -->
 
+          <div class="row">
+            
+            <div class="mb-3 col-12">
+              <div class="regex-msg collapse multi-collapse" id="regexMsg">
+                <div class="card card-body">
+                  <p>I used the following RegEx patterns:</p> 
+                  <p class="font-monospace">First name: /^[a-z ,.'-]+$/i</p>
+                  <p class="font-monospace">Last name: /^[a-z ,.'-]+$/i</p>
+                  <p class="font-monospace">Date of birth: /^[\d]{2}-[\d]{2}-[\d]{4}/i</p>
+                  <p class="font-monospace">Mobile number: /^[0]6\d{8}$|^[\+]316\d{8}$/i</p>
+                  <p class="font-monospace">Land line = /^0[1-6]\d{1,2}\d{7}|^\+31[1-6]\d{1,2}\d{7}/i</p>
+                  <p class="font-monospace">IBAN = <a href="https://math.stackexchange.com/questions/1918217/the-mod97-operation-in-iban-validation">See</a> explanation</p>
+                </div>
+              </div>
+            </div>
 
+          </div> <!-- end of row -->
+          
         </form>
       </div>
       <div class="col-sm-2">
         <!-- gutter right -->
       </div>
     </div> <!-- end of row -->
-
-
 
   </div> <!-- end of row -->
 
@@ -162,6 +177,7 @@
     $(document).ready(function () {
       setUpValidation();
       addEventListenerToButton("autoFillButton");
+      addEventListenerToButton("showRegexButton");
     })
 
   </script>
