@@ -40,25 +40,23 @@
 
     <div class="row">
 
-      <div class="col-sm-4">
+      <div class="col-sm-2">
         <!-- gutter left -->
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-8">
 
         <form class="form-style">
           <div class="row">
 
-            <div class="col-12">
+            <div class="col-6">
               <input id="firstName" class="validate mb-3 form-control" type="text" aria-label="first-name"
                 placeholder="first name">
             </div>
 
-          </div>
 
-          <div class="row">
 
-            <div class="col-12">
+            <div class="col-6">
               <input id="lastName" class="validate mb-3 form-control" type="text" placeholder="last name">
             </div>
 
@@ -66,16 +64,12 @@
 
           <div class="row">
 
-            <div class="col-12">
-              <label for="DateOfBirth">date of birth:</label>
-              <input id="DateOfBirth" class="mb-3 form-control" type="date" placeholder="date of birth">
+            <div class="col-6">
+              <input id="dateOfBirth" class="validate mb-3 form-control" type="text" placeholder="dd-mm-yyyy (date of birth)">
             </div>
 
-          </div> <!-- end of row -->
 
-          <div class="row">
-
-            <div class="col-12">
+            <div class="col-6">
               <input id="mobileNumber" class="validate mb-3 form-control" type="text" placeholder="mobile phone">
             </div>
 
@@ -84,15 +78,12 @@
 
           <div class="row">
 
-            <div class="col-12">
+            <div class="col-6">
               <input id="landLine" class="validate mb-3 form-control" type="text" placeholder="land line">
             </div>
 
-          </div> <!-- end of row -->
 
-          <div class="row">
-
-            <div class="col-12">
+            <div class="col-6">
               <input id="email" class="validate mb-3 form-control" type="text" placeholder="e-mail">
             </div>
 
@@ -101,13 +92,13 @@
           <div class="row">
 
             <div class="col-12">
-              <input id="iban" class="validate mb-3 form-control" type="text" placeholder="account number">
+              <input id="iban" class="validate mb-3 form-control" type="text" placeholder="IBAN account number">
             </div>
 
           </div> <!-- end of row -->
 
           <div class="row">
-            
+
             <div class="mb-3 col-12">
               <div class="succes-msg collapse multi-collapse" id="multiCollapseExample1">
                 <div class="card card-body">
@@ -122,21 +113,25 @@
 
           <div class="row">
 
-            <div class="col-12">
+            <div class="col-3">
               <button type="button" id="submitButton" class="mb-3 btn btn-outline-success" disabled>Submit</button>
             </div>
+            <div class="col-5">
+              <button type="button" id="autoFillButton" class="mb-3 btn btn-outline-success">Auto-Fill</button>
+            </div>
+
 
           </div> <!-- end of row -->
 
 
         </form>
       </div>
-      </div> <!-- end of row -->
+      <div class="col-sm-2">
+        <!-- gutter right -->
+      </div>
+    </div> <!-- end of row -->
 
 
-    <div class="col-sm-4">
-      <!-- gutter right -->
-    </div>
 
   </div> <!-- end of row -->
 
@@ -166,6 +161,7 @@
   <script>
     $(document).ready(function () {
       setUpValidation();
+      addEventListenerToButton("autoFillButton");
     })
 
   </script>
