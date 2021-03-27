@@ -1,0 +1,175 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>BS Forms & more</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Forms">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+
+
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="header-style col-sm-12">
+        <h1>Bootstrap Form Validation</h1>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-4">
+        <!-- gutter left -->
+      </div>
+
+      <div class="col-sm-4">
+
+        <form class="form-style">
+          <div class="row">
+
+            <div class="col-12">
+              <input id="firstName" class="validate mb-3 form-control" type="text" aria-label="first-name"
+                placeholder="first name">
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-12">
+              <input id="lastName" class="validate mb-3 form-control" type="text" placeholder="last name">
+            </div>
+
+          </div> <!-- end of row -->
+
+          <div class="row">
+
+            <div class="col-12">
+              <label for="DateOfBirth">date of birth:</label>
+              <input id="DateOfBirth" class="mb-3 form-control" type="date" placeholder="date of birth">
+            </div>
+
+          </div> <!-- end of row -->
+
+          <div class="row">
+
+            <div class="col-12">
+              <input id="mobileNumber" class="validate mb-3 form-control" type="text" placeholder="mobile phone">
+            </div>
+
+          </div> <!-- end of row -->
+
+
+          <div class="row">
+
+            <div class="col-12">
+              <input id="landLine" class="validate mb-3 form-control" type="text" placeholder="land line">
+            </div>
+
+          </div> <!-- end of row -->
+
+          <div class="row">
+
+            <div class="col-12">
+              <input id="email" class="validate mb-3 form-control" type="text" placeholder="e-mail">
+            </div>
+
+          </div> <!-- end of row -->
+
+          <div class="row">
+
+            <div class="col-12">
+              <input id="iban" class="validate mb-3 form-control" type="text" placeholder="account number">
+            </div>
+
+          </div> <!-- end of row -->
+
+          <div class="row">
+            
+            <div class="mb-3 col-12">
+              <div class="succes-msg collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                  You input was validated.
+
+                  Great success!
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+
+            <div class="col-12">
+              <button type="button" id="submitButton" class="mb-3 btn btn-outline-success" disabled>Submit</button>
+            </div>
+
+          </div> <!-- end of row -->
+
+
+        </form>
+      </div>
+      </div> <!-- end of row -->
+
+
+    <div class="col-sm-4">
+      <!-- gutter right -->
+    </div>
+
+  </div> <!-- end of row -->
+
+  </div> <!-- end of container -->
+
+  <!-- js -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+
+  </script>
+
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script>
+    $(document).ready(function () {
+      setUpValidation();
+    })
+
+  </script>
+
+</body>
+
+</html>
